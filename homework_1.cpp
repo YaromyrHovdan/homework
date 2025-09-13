@@ -19,13 +19,13 @@ public:
         speed = 0; 
     }
 
-    // Гетери 
+   
     string getBrand() const { return brand; }
     string getModel() const { return model; }
     int getYear() const { return year; }
     double getSpeed() const { return speed; }
 
-    // Сетери
+    
     void setSpeed(double s) {
         if (s >= 0 && s <= 300) {
             speed = s;
@@ -49,7 +49,7 @@ public:
             speed = 0;
     }
 
-    // Вивід інформації 
+     
     void printInfo() const {
         cout << brand << " " << model << " (" << year << ")"
              << " | Speed: " << speed << " kph " << endl;
@@ -57,7 +57,17 @@ public:
 };
 
 int main() {
-    Car car("BMW", "M5", 2020);
+
+    cout << "enter car's brand "<< endl;
+    string brand;
+    cin >> brand;
+    cout << "enter car's model "<< endl;
+    string model;
+    cin >> model;
+    cout << "enter car's year "<< endl;
+    int year;
+    cin >> year;    
+    Car car(brand, model, year);
 
     car.printInfo();
     car.setSpeed(100);
@@ -69,7 +79,7 @@ int main() {
     car.brake(200);
     car.printInfo();
 
-    // Спроба некоректного встановлення
+    
     car.setSpeed(-50);
 
     return 0;
